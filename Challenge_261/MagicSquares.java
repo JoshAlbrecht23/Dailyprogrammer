@@ -31,7 +31,7 @@ class MagicSquares{
 
 			for( int j = i ; j <= i + 3 ; j++ ){
 
-				if ( j = i + 3){
+				if ( j == i + 3){
 					if ( sum != 15)
 						return false ; 
 				}else{
@@ -44,22 +44,27 @@ class MagicSquares{
 		//Column check
 		for ( int i = 0; i < 3 ; i++){
 
-			int sum = 0 ;
+			int sum = 0;
 
-			for( int j = i + 3; j <= i + 6 ; j+= 3){
+			for( int j = i ; j <= i + 6 ; j+= 3){
+
+				sum += array[j] ;
 
 				if ( j == i + 6){
 					if ( sum != 15)
 						return false ; 
-				}else{
-					sum += array[i] ;
 				}	
 			}
 		}
 
 		//Diagonal check
+		if (array[0] + array[4] + array[8] != 15)
+			return false ; 	
+		if (array[2] + array[4] + array[6] != 15)
+			return false ;
 
 
+		return true ;
 
 	}
 
