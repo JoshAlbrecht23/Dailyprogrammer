@@ -15,4 +15,4 @@
 (define MaybeNumeric
   (lambda (String s)
     ( cond ( empty? (read-line s)())
-           (                    
+           ( number? (read-line s)("(Number)"))                  
